@@ -2,7 +2,7 @@
 
 $LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
 require "jekyll"
-require "jekyll-easy-image"
+require "jekyll-easy-images"
 
 Jekyll.logger.log_level = :error
 
@@ -25,7 +25,7 @@ RSpec.configure do |config|
   CONFIG_DEFAULTS = {
     "source"      => source_dir,
     "destination" => dest_dir,
-    "gems"        => ["jekyll-easy-image"]
+    "gems"        => ["jekyll-easy-images"]
   }.freeze
 
   def make_page(options = {})

@@ -3,11 +3,11 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "jekyll-maps/version"
+require "jekyll-easy-images/version"
 Gem::Specification.new do |spec|
-  spec.name          = "jekyll-easy-image"
+  spec.name          = "jekyll-easy-images"
   spec.summary       = "Easy responsive images in Jekyll blogs"
-  spec.description   = "jekyll-easy-image is a Jekyll plugin for easily adding responsive images to Jekyll blog posts"
+  spec.description   = "jekyll-easy-images is a Jekyll plugin for easily adding responsive images to Jekyll blog posts"
   spec.version       = Jekyll::Maps::VERSION
   spec.authors       = ["Brian Lundin"]
   spec.email         = ["brian.lundin@gmail.com"]
