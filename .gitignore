@@ -7,8 +7,18 @@
 /spec/reports/
 /tmp/
 /spec/dest/
-
-# rspec failure tracking
+/.config
+/coverage/
+/InstalledFiles
+/pkg/
+/spec/reports/
+/spec/examples.txt
+/vendor/bundle
+/lib/bundler/man/
+/_yardoc/
+/doc/
+/rdoc/
+*.gem
+*.rbc
 .rspec_status
-
 .DS_Store
