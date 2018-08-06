@@ -3,10 +3,12 @@
 $LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
 require "jekyll"
 require "jekyll-easy-images"
+require "rspec-html-matchers"
 
 Jekyll.logger.log_level = :error
 
 RSpec.configure do |config|
+  config.include RSpecHtmlMatchers
   config.run_all_when_everything_filtered = true
   config.filter_run :focus
   config.order = "random"
