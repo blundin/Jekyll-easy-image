@@ -13,4 +13,5 @@ module Jekyll
   end
 end
 
+
 Liquid::Template.register_tag("easy_image", Jekyll::EasyImages::EasyImageTag)

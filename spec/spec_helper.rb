@@ -12,6 +12,9 @@ RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
   config.filter_run :focus
   config.order = "random"
+  config.expect_with :rspec do |c|
+    c.syntax = :expect
+  end
 
   SOURCE_DIR = File.expand_path("../fixtures", __FILE__)
   DEST_DIR   = File.expand_path("../dest", __FILE__)

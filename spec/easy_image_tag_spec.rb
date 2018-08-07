@@ -4,10 +4,10 @@ describe "EasyImageTag" do
   let(:site) { make_site }
   before { site.process }
 
-  context "test page" do
+  context "Bootstrap test page" do
     let (:content) { File.read(dest_dir("page.html")) }
 
-    it "renders correctly" do
+    it "renders" do
       expect(content).to match(%r!(Test|Page)!)
     end
 
