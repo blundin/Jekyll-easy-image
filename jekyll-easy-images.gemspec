@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.version       = Jekyll::Maps::VERSION
   spec.authors       = ["Brian Lundin"]
   spec.email         = ["brian.lundin@gmail.com"]
-  spec.homepage      = "https://github.com/blundin/jekyll-easy-image"
+  spec.homepage      = "https://github.com/blundin/jekyll-easy-images"
   spec.licenses      = ["MIT"]
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r!^(test|spec|features)/!) }
   spec.require_paths = ["lib"]
@@ -19,4 +19,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 11.0"
   spec.add_development_dependency "rspec", "~> 3.5"
   spec.add_development_dependency "rspec-html-matchers", "~> 0.9"
+  spec.add_development_dependency "guard", "~> 2.14"
+  spec.add_development_dependency "guard-rspec"
 end

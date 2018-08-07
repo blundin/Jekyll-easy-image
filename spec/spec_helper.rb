@@ -34,7 +34,7 @@ RSpec.configure do |config|
   }.freeze
 
   def make_page(options = {})
-    page      = Jekyll::Page.new(site, CONFIG_DEFAULTS["source"], "", "page.md")
+    page      = Jekyll::Page.new(site, CONFIG_DEFAULTS["source"])
     page.data = options
     page
   end
