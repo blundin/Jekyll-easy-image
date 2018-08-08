@@ -1,6 +1,6 @@
 # Jekyll Easy Images
 
-![Build](https://travis-ci.org/blundin/jekyll-easy-image.svg?branch=master) [![Maintainability](https://api.codeclimate.com/v1/badges/10a68db09dea90bce145/maintainability)](https://codeclimate.com/github/blundin/jekyll-easy-image/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/10a68db09dea90bce145/test_coverage)](https://codeclimate.com/github/blundin/jekyll-easy-image/test_coverage)
+![Build](https://travis-ci.org/blundin/jekyll-easy-image.svg?branch=master) [![Maintainability](https://api.codeclimate.com/v1/badges/10a68db09dea90bce145/maintainability)](https://codeclimate.com/github/blundin/jekyll-easy-image/maintainability)
 
 ## What is Jekyll Easy Images?
 
