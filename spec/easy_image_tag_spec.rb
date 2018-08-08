@@ -5,10 +5,7 @@ describe (Jekyll::EasyImages) do
     {
       "source": source_dir,
       "destination": dest_dir,
-      "url": "http://example.org",
-      "test": {
-        "key": "1"
-      }
+      "url": "http://example.org"
     }
   end
 
