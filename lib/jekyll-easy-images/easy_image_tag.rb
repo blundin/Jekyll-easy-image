@@ -82,7 +82,7 @@ module Jekyll
         elements = path_in.split('/')
         path_out = ""
         i = 0
-        until i == elements.length
+        until i == elements.length - 1
           path_out << "#{elements[i]}/"
           i += 1
         end
