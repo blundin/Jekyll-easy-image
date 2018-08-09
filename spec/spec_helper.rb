@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-
 require "rspec-html-matchers"
 require "jekyll"
 require "jekyll-easy-images"
