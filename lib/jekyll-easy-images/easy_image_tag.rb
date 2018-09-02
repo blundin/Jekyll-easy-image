@@ -11,8 +11,10 @@ module Jekyll
       def render(context)
         # set plugin options
         plugin_config = context.registers[:site].config["easy_images"]
-        responsive_image_class =  plugin_config[:responsive_image_class]
-        image_resize_count = plugin_config[:srcset][:resized_images]
+
+        # I do not know why I have to hack this, but this is the only way to get it to work in the plugin project and a Jekyll site
+        responsive_image_class = plugin_config["responsive_image_class"] ? plugin_config["responsive_image_class"] : plugin_config[:responsive_image_class]
+        # image_resize_count = plugin_config[:srcset][:resized_images]
 
         # read in and process the tag markup
         render_markup = Liquid::Template.parse(@markup).render(context).gsub(/\\\{\\\{|\\\{\\%/, '\{\{' => '{{', '\{\%' => '{%')
@@ -26,8 +28,9 @@ module Jekyll
           {}
         end
 
-        # iterate through all attributes, and identify the 'class' attribute
+        # iterate through all attributes, and identify the 'class' attributes
         if responsive_image_class != nil
+          puts responsive_image_class
           responsive_class_set = false
           html_attr.each do |key, value|
             if key == "class" &&
@@ -39,6 +42,8 @@ module Jekyll
           if responsive_class_set != true
             html_attr.merge!(class: responsive_image_class)
           end
+        else
+          puts "no image class set"
         end
 
         # build the attribute string from input
@@ -51,28 +56,28 @@ module Jekyll
         }
 
         # Add srcset attribute if resizing is enabled
-        if image_resize_count.to_i > 1
-          image = MiniMagick::Image.open(image_path)
-
-          i = 1
-          image_sizes = Array.new
-          while i <= image_resize_count.to_i do
-            image_sizes << image.width / i
-            i += 1
-          end
-        end
-
-        if image_sizes != nil
-          path = build_relative_filepath(image_path_input)
-          filename = File.basename(image_path, ".*")
-          file_ext = File.extname(image_path)
-
-          srcset_string = ""
-          image_sizes.each do |image_size|
-            puts "#{path}#{filename}-#{image_size}#{file_ext}"
-          end
-          html_attr_string << " #{srcset_string}"
-        end
+        # if image_resize_count.to_i > 1
+        #   image = MiniMagick::Image.open(image_path)
+        #
+        #   i = 1
+        #   image_sizes = Array.new
+        #   while i <= image_resize_count.to_i do
+        #     image_sizes << image.width / i
+        #     i += 1
+        #   end
+        # end
+        #
+        # if image_sizes != nil
+        #   path = build_relative_filepath(image_path_input)
+        #   filename = File.basename(image_path, ".*")
+        #   file_ext = File.extname(image_path)
+        #
+        #   srcset_string = ""
+        #   image_sizes.each do |image_size|
+        #     puts "#{path}#{filename}-#{image_size}#{file_ext}"
+        #   end
+        #   html_attr_string << " #{srcset_string}"
+        # end
 
         # Return the complete image tag string
         "<img src=\"#{image_path}\" #{html_attr_string} />"
