@@ -30,7 +30,7 @@ module Jekyll
 
         # iterate through all attributes, and identify the 'class' attributes
         if responsive_image_class != nil
-          puts responsive_image_class
+          # puts responsive_image_class
           responsive_class_set = false
           html_attr.each do |key, value|
             if key == "class" &&
@@ -42,8 +42,8 @@ module Jekyll
           if responsive_class_set != true
             html_attr.merge!(class: responsive_image_class)
           end
-        else
-          puts "no image class set"
+        # else
+        #   puts "no image class set"
         end
 
         # build the attribute string from input
