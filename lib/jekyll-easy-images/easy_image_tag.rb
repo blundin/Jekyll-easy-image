@@ -55,30 +55,6 @@ module Jekyll
           end
         }
 
-        # Add srcset attribute if resizing is enabled
-        # if image_resize_count.to_i > 1
-        #   image = MiniMagick::Image.open(image_path)
-        #
-        #   i = 1
-        #   image_sizes = Array.new
-        #   while i <= image_resize_count.to_i do
-        #     image_sizes << image.width / i
-        #     i += 1
-        #   end
-        # end
-        #
-        # if image_sizes != nil
-        #   path = build_relative_filepath(image_path_input)
-        #   filename = File.basename(image_path, ".*")
-        #   file_ext = File.extname(image_path)
-        #
-        #   srcset_string = ""
-        #   image_sizes.each do |image_size|
-        #     puts "#{path}#{filename}-#{image_size}#{file_ext}"
-        #   end
-        #   html_attr_string << " #{srcset_string}"
-        # end
-
         # Return the complete image tag string
         "<img src='#{image_path}' #{html_attr_string} />"
       end
