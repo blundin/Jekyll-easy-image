@@ -80,7 +80,7 @@ module Jekyll
         # end
 
         # Return the complete image tag string
-        "<img src=\"#{image_path}\" #{html_attr_string} />"
+        "<img src='#{image_path}' #{html_attr_string} />"
       end
 
       def build_relative_filepath(path_in)
