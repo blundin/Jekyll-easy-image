@@ -57,17 +57,17 @@ module Jekyll
         "<img src='#{image_path}' #{html_attr_string} />"
       end
 
-      def build_relative_filepath(path_in)
-        elements = path_in.split('/')
-        path_out = ""
-        i = 0
-        until i == elements.length - 1
-          path_out << "#{elements[i]}/"
-          i += 1
-        end
-
-        path_out
-      end
+      # def build_relative_filepath(path_in)
+      #   elements = path_in.split('/')
+      #   path_out = ""
+      #   i = 0
+      #   until i == elements.length - 1
+      #     path_out << "#{elements[i]}/"
+      #     i += 1
+      #   end
+      #
+      #   path_out
+      # end
     end
   end
 end
