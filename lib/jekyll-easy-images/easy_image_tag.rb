@@ -14,14 +14,12 @@ module Jekyll
 
         # I do not know why I have to hack this, but this is the only way to get it to work in the plugin project and a Jekyll site
         responsive_image_class = plugin_config["responsive_image_class"] ? plugin_config["responsive_image_class"] : plugin_config[:responsive_image_class]
-        # image_resize_count = plugin_config[:srcset][:resized_images]
 
         # read in and process the tag markup
         render_markup = Liquid::Template.parse(@markup).render(context).gsub(/\\\{\\\{|\\\{\\%/, '\{\{' => '{{', '\{\%' => '{%')
         markup = /^(?:(?<preset>[^\s.:\/]+)\s+)?(?<image_src>[^\s]+\.[a-zA-Z0-9]{3,4})\s*(?<html_attr>[\s\S]+)?$/.match(render_markup)
 
-        image_path_input = markup[:image_src]
-        image_path = File.expand_path(image_path_input, __dir__)
+        image_path = File.expand_path(markup[:image_src], __dir__)
         html_attr = if markup[:html_attr]
           Hash[ *markup[:html_attr].scan(/(?<attr>[^\s="]+)(?:="(?<value>[^"]+)")?\s?/).flatten ]
         else
