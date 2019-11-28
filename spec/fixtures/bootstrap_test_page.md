@@ -12,3 +12,5 @@ layout: default
 {% easy_image ../../spec/fixtures/images/big-bend-desert.png id="2" class="image image2" alt="The west Texas desert"%}
 
 {% easy_image ../../spec/fixtures/images/big-bend-desert.png id="3" alt="The west Texas desert"%}
+
+{% easy_image ../../spec/fixtures/images/big-bend-desert.png id %}
