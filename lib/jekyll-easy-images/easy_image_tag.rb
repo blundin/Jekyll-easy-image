@@ -9,10 +9,9 @@ module Jekyll
       end
 
       def render(context)
-        # set plugin options
         plugin_config = context.registers[:site].config["easy_images"]
 
-        # I do not know why I have to hack this, but this is the only way to get it to work in the plugin project and a Jekyll site
+        # hack
         responsive_image_class = plugin_config["responsive_image_class"] ? plugin_config["responsive_image_class"] : plugin_config[:responsive_image_class]
 
         # read in and process the tag markup
@@ -26,7 +25,6 @@ module Jekyll
           {}
         end
 
-        # iterate through all attributes, and identify the 'class' attributes
         if responsive_image_class != nil
           # puts responsive_image_class
           responsive_class_set = false

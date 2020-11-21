@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
   spec.add_dependency "jekyll", "~> 4.0"
   spec.add_dependency "mini_magick", "~> 4.8"
-  spec.add_development_dependency "rake", "~> 11.0"
+  spec.add_development_dependency "rake", "~> 12.3.3"
   spec.add_development_dependency "rspec", "~> 3.5"
   spec.add_development_dependency "rspec-html-matchers", "~> 0.9"
   spec.add_development_dependency "guard", "~> 2.14"
